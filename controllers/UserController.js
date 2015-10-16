@@ -8,11 +8,11 @@
       $scope.user = data;
       github.getRepos($scope.user).then(onRepos, onError);
     };
-    
+
     var onRepos = function(data) {
       $scope.repos = data;
     };
-    
+
     var onError = function(reason) {
       $scope.error = "Could not fetch user!";
     }

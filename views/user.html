@@ -33,16 +33,16 @@
           <td>Stars</td>
           <td>Language</td>
           <td>Open Issues</td>
-          <td>Watchers</td>
+          <td>Last Push</td>
         </tr>
       </thead>
       <tbody>
         <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
-          <td><a href="{{repo.html_url}}">{{repo.name}}</a></td>
+          <td><a href="#/repo/{{user.login}}/{{repo.name}}">{{repo.name}}</a></td>
           <td class="text-center">{{repo.stargazers_count | number}}</td>
           <td class="text-center">{{repo.language}}</td>
           <td class="text-center">{{repo.open_issues_count}}</td>
-          <td class="text-center">{{repo.watchers_count}}</td>
+          <td class="text-center">{{repo.pushed_at | date}}</td>
         </tr>
       </tbody>
     </table>

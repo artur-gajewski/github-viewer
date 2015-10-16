@@ -1,0 +1,92 @@
+<h2>{{repo.name}}</h2>
+
+<br/>
+<a href="#/user/{{repo.owner.login}}">&laquo; Back to {{repo.owner.login}}</a>
+<br />
+<a href="#/main">&laquo; Back to search</a>
+<br /><br/>
+
+<div id="row">
+    <div id="col-sm-12">
+    <h3>Collaborators</h3>
+    <br />
+    <div class="row">
+        <div class="col-sm-12">
+            <a ng-repeat="user in repo.contributors" href="#/user/{{user.login}}"><img ng-src="{{user.avatar_url}}" title="{{user.login}}" width="80" /></a>
+        </div>
+    </div>
+</div>
+
+<br/>
+
+<div id="row">
+    <div id="col-sm-12">
+        <h3>Statistics</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="repos">
+                    <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Data</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{repo.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>URL</td>
+                        <td><a href="{{repo.html_url}}">{{repo.html_url}}</a></td>
+                    </tr>
+                    <tr>
+                        <td>SSH URL</td>
+                        <td>{{repo.ssh_url}}</td>
+                    </tr>
+                    <tr>
+                        <td>Git URL</td>
+                        <td>{{repo.git_url}}</td>
+                    </tr>
+                    <tr>
+                        <td>Open Issues</td>
+                        <td>{{repo.open_issues_count}}</td>
+                    </tr>
+                    <tr>
+                        <td>Stars</td>
+                        <td>{{repo.stargazers_count}}</td>
+                    </tr>
+                    <tr>
+                        <td>Subscribers</td>
+                        <td>{{repo.subscribers_count}}</td>
+                    </tr>
+                    <tr>
+                        <td>Watchers</td>
+                        <td>{{repo.watchers_count}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contributors</td>
+                        <td>{{repo.contributors.length}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last Push</td>
+                        <td>{{repo.pushed_at | date}}</td>
+                    </tr>
+                    <tr>
+                        <td>Issues</td>
+                        <td><a href="{{repo.html_url}}/issues">{{repo.html_url}}/issues</a></td>
+                    </tr>
+                    <tr>
+                        <td>Pull Requests</td>
+                        <td><a href="{{repo.html_url}}/pulls">{{repo.html_url}}/pulls</a></td>
+                    </tr>
+                    <tr>
+                        <td>Wiki</td>
+                        <td><a href="{{repo.html_url}}/wiki">{{repo.html_url}}/wiki</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
