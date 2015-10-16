@@ -1,0 +1,50 @@
+<div id="row">
+  <div id="col-sm-12">
+    <div>{{ error }}</div>
+    <h2>{{user.name}}</h2>
+    <h3>{{user.location}}</h3>
+    <img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="80" />
+  </div>
+</div>
+
+<h4>Repositories: {{ repos.length }}</h4>
+
+<div id="row">
+  <div id="col-sm-12">
+    Order by:
+    <select ng-model="repoSortOrder">
+      <option value="+name">Name</option>
+      <option value="-stargazers_count">Stars</option>
+      <option value="+language">Language</option>
+      <option value="-open_issues_count">Open Issues</option>
+      <option value="-watchers_count">Watchers</option>
+    </select>
+  </div>
+</div>
+
+<div id="row">
+  <div id="col-sm-12">
+    <br/>
+    <a href="#/main">&laquo; Back to search</a>
+    <table class="repos">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Stars</td>
+          <td>Language</td>
+          <td>Open Issues</td>
+          <td>Watchers</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+          <td><a href="{{repo.html_url}}">{{repo.name}}</a></td>
+          <td class="text-center">{{repo.stargazers_count | number}}</td>
+          <td class="text-center">{{repo.language}}</td>
+          <td class="text-center">{{repo.open_issues_count}}</td>
+          <td class="text-center">{{repo.watchers_count}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

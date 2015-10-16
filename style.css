@@ -1,0 +1,36 @@
+/* Styles go here */
+
+#container {
+  margin: 30px;
+}
+
+h4 {
+  margin-top: 30px;
+}
+
+.repos {
+  margin-top: 30px;
+  width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+thead > tr > td {
+  font-weight: bold;
+  text-align: center;
+  background-color: #eee;
+}
+
+td {
+  padding: 5px;
+}
+
+tr:hover {
+  background-color: #efefef;
+}
