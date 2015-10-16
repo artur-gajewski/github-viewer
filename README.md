@@ -1,2 +1,3 @@
-# github-viewer
-Fetch user's GitHub repositories and statistics in one view.
+# GitHub Viewer
+
+AngularJS application to search for GitHub user and display his/her repositories and statistics in one view.
